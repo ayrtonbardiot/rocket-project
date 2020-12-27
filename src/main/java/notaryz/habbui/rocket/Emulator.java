@@ -24,7 +24,6 @@ public class Emulator {
                 "  |,-'--|--'-.|");
         System.out.println("RocketProject - by nttZx#0013");
         System.out.println("© Tous droits réservés - 2021");
-        System.out.println("Licence réservé à Habbui.online");
 
         configurationManager = new ConfigurationManager("config.ini");
         System.out.println("Configuration ---> chargé !");
