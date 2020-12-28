@@ -1,6 +1,7 @@
 package notaryz.habbui.rocket;
 
 import notaryz.habbui.rocket.configuration.ConfigurationManager;
+import notaryz.habbui.rocket.connection.GameServer;
 import sun.security.tools.jarsigner.TimestampedSigner;
 
 import java.io.IOException;
@@ -10,8 +11,9 @@ import java.util.Date;
 
 public class Emulator {
     private static ConfigurationManager configurationManager;
+    private static GameServer gameServer;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Timestamp timestampStart = new Timestamp(System.currentTimeMillis());
         System.out.println("        |\n" +
                 "       / \\\n" +
@@ -26,9 +28,9 @@ public class Emulator {
         System.out.println("© Tous droits réservés - 2021");
 
         configurationManager = new ConfigurationManager("config.ini");
-        System.out.println("Configuration ---> chargé !");
+        System.out.println("Configuration ---> loaded !");
 
-
+        gameServer = new GameServer(configurationManager.getValue("websocket.ip"), configurationManager.getInteger("websocket.port"));
     }
 
 }
