@@ -15,7 +15,7 @@ public class ConfigurationManager {
     }
 
     public String getValue(String key){
-        return configini.getProperty("key");
+        return configini.getProperty(key);
     }
 
     public Integer getInteger(String key){
