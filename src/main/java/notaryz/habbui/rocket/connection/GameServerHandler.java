@@ -16,7 +16,7 @@ public class GameServerHandler {
     }
 
     @OnWebSocketMessage
-    public void onMessage(byte[] data, int offset, int length){
-        System.out.println("New packet received.");
+    public void onMessage(Session session, byte[] data, int offset, int length){
+        System.out.println("New packet received. " + session.getRemoteAddress().getHostString());
     }
 }
