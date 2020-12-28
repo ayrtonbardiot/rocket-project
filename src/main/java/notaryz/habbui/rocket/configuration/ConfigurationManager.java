@@ -7,10 +7,19 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigurationManager {
-
+    private Properties configini;
     public ConfigurationManager(String filePath) throws IOException {
-        Properties props = new Properties();
+        this.configini = new Properties();
         FileReader config_file = new FileReader(filePath);
-        props.load(config_file);
+        configini.load(config_file);
     }
+
+    public String getValue(String key){
+        return configini.getProperty("key");
+    }
+
+    public Integer getInteger(String key){
+        return Integer.parseInt(configini.getProperty(key));
+    }
+
 }
