@@ -1,5 +1,6 @@
 package notaryz.habbui.rocket.connection.packets;
 
+import notaryz.habbui.rocket.connection.packets.incoming.ClientMessage;
 import notaryz.habbui.rocket.connection.packets.incoming.EventPacket;
 import notaryz.habbui.rocket.connection.packets.incoming.IncomingHeaders;
 import notaryz.habbui.rocket.connection.packets.incoming.handshake.SecureLoginEvent;
@@ -13,6 +14,10 @@ public class PacketManager {
     public PacketManager(){
         this.incoming = new HashMap<>();
         this.registerHandshake();
+    }
+
+    public static void handle(ClientMessage msg){
+
     }
 
     private void registerHandshake(){
