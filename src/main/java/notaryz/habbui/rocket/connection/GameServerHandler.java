@@ -6,6 +6,7 @@ import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.eclipse.jetty.websocket.api.Session;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 @WebSocket
 public class GameServerHandler {
@@ -18,5 +19,6 @@ public class GameServerHandler {
     @OnWebSocketMessage
     public void onMessage(Session session, byte[] data, int offset, int length){
         System.out.println("New packet received. " + session.getRemoteAddress().getHostString());
+        ByteBuffer buf = ByteBuffer.wrap(data);
     }
 }
